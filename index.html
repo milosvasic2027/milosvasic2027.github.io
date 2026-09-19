@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Milos Vasic | Class of 2027 Guard | The Hotchkiss School</title>
+<meta name="description" content="Recruiting profile for Milos Vasic, Class of 2027 guard at The Hotchkiss School. Film, academics, AAU and national team experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A; --navy-2:#12305A; --navy-3:#1B4079;
+  --sky:#4EA8DE; --sky-2:#7FC4EC; --ice:#EAF4FC; --gold:#E8B44A;
+  --text:#F2F7FC; --muted:#A8BDD4; --card:rgba(255,255,255,.045);
+  --line:rgba(255,255,255,.12); --radius:14px;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--navy); color:var(--text);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--sky-2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(11,31,58,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;
+  align-items:center;justify-content:space-between;gap:16px}
+.brand{font-family:"Barlow Condensed",Inter,sans-serif;font-size:22px;
+  font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;white-space:nowrap}
+.brand span{color:var(--sky)}
+.nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;font-weight:500}
+.nav-links a{color:var(--muted)}
+.nav-links a:hover{color:#fff;text-decoration:none}
+
+/* HERO */
+header.hero{position:relative;overflow:hidden;
+  background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 45%,var(--navy-3) 100%)}
+header.hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(900px 420px at 78% 12%,rgba(78,168,222,.30),transparent 65%);
+  pointer-events:none}
+.hero-in{position:relative;z-index:2;max-width:var(--max);margin:0 auto;
+  padding:56px 20px 48px;display:grid;grid-template-columns:1.35fr .8fr;gap:44px;align-items:center}
+.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--sky-2);border:1px solid rgba(78,168,222,.45);
+  border-radius:999px;padding:5px 14px;margin-bottom:18px}
+h1{font-family:"Barlow Condensed",Inter,sans-serif;font-size:clamp(44px,7.5vw,78px);
+  line-height:.95;margin:0 0 6px;letter-spacing:.01em;text-transform:uppercase;color:#fff}
+.hero-sub{font-size:clamp(17px,2.4vw,21px);color:var(--sky-2);font-weight:600;margin:0 0 20px}
+.hero-meta{color:var(--muted);font-size:15px;margin:0 0 26px;max-width:52ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;
+  font-size:15px;border:1px solid transparent;transition:.16s}
+.btn-primary{background:var(--sky);color:#06243D}
+.btn-primary:hover{background:var(--sky-2);text-decoration:none}
+.btn-ghost{border-color:var(--line);color:#fff}
+.btn-ghost:hover{border-color:var(--sky);color:var(--sky-2);text-decoration:none}
+.portrait{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  background:var(--card);aspect-ratio:4/5;display:flex;align-items:center;
+  justify-content:center;color:var(--muted);font-size:14px;text-align:center;padding:16px}
+.portrait img{width:100%;height:100%;object-fit:cover}
+
+/* STAT STRIP */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.03)}
+.stats-in{max-width:var(--max);margin:0 auto;padding:22px 20px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:18px}
+.stat{text-align:center}
+.stat .v{font-family:"Barlow Condensed",Inter,sans-serif;font-size:32px;
+  font-weight:700;color:#fff;line-height:1.1}
+.stat .l{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+
+/* SECTIONS */
+section{padding:62px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+section:last-of-type{border-bottom:none}
+.sec-head{margin-bottom:30px}
+.sec-kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sky);font-weight:700;margin-bottom:8px}
+h2{font-family:"Barlow Condensed",Inter,sans-serif;font-size:clamp(30px,4.6vw,44px);
+  margin:0 0 10px;text-transform:uppercase;letter-spacing:.01em;color:#fff;line-height:1.05}
+.sec-intro{color:var(--muted);max-width:68ch;margin:0}
+h3{font-size:19px;margin:0 0 8px;color:#fff;font-weight:650}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+
+/* VIDEO */
+.video{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;
+  background:#071729;border:1px solid var(--line);margin-bottom:14px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .ph{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;color:var(--muted);font-size:13px;
+  text-align:center;padding:18px;gap:6px}
+.video .ph b{color:var(--sky-2);font-weight:600}
+
+/* EVENT CARDS */
+.evt{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;display:flex;flex-direction:column}
+.evt-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.evt .date{font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--sky);font-weight:700;margin-bottom:6px}
+.evt p{color:var(--muted);font-size:14.5px;margin:0 0 12px;flex:1}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto}
+.tag{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;
+  background:rgba(78,168,222,.14);color:var(--sky-2);border:1px solid rgba(78,168,222,.3);
+  border-radius:999px;padding:4px 11px}
+
+/* LIST */
+ul.clean{list-style:none;padding:0;margin:0}
+ul.clean li{padding:9px 0 9px 22px;position:relative;color:var(--muted);
+  font-size:15px;border-bottom:1px solid rgba(255,255,255,.06)}
+ul.clean li:last-child{border-bottom:none}
+ul.clean li::before{content:"";position:absolute;left:0;top:17px;width:7px;height:7px;
+  border-radius:50%;background:var(--sky)}
+ul.clean li b{color:#fff;font-weight:600}
+
+/* ACADEMIC TABLE */
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:11px 10px;border-bottom:1px solid rgba(255,255,255,.08)}
+th{color:var(--sky-2);font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+td{color:var(--muted)}
+td:first-child{color:#fff;font-weight:600}
+
+/* CHAMPIONSHIP BANNER */
+.champ{background:linear-gradient(135deg,rgba(232,180,74,.13),rgba(78,168,222,.08));
+  border:1px solid rgba(232,180,74,.34);border-radius:var(--radius);padding:24px;margin-bottom:24px}
+.champ .title{font-family:"Barlow Condensed",Inter,sans-serif;font-size:27px;
+  text-transform:uppercase;color:var(--gold);margin:0 0 6px;letter-spacing:.02em}
+.champ p{margin:0;color:var(--muted)}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+.contact-photo{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+  background:var(--card)}
+.contact-photo img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover}
+@media(max-width:760px){.contact-wrap{grid-template-columns:1fr}
+  .contact-photo{max-width:230px;margin:0 auto}}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.contact-card{background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:20px}
+.contact-card .role{font-size:11px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--sky);font-weight:700;margin-bottom:6px}
+.contact-card .nm{color:#fff;font-weight:650;font-size:16px;margin-bottom:3px}
+.contact-card .dt{color:var(--muted);font-size:14px;word-break:break-word}
+
+.video video{position:absolute;inset:0;width:100%;height:100%;background:#000;object-fit:contain}
+/* FILM INDEX */
+.film-main{margin-bottom:0;border-radius:var(--radius) var(--radius) 0 0}
+.film-meta{border:1px solid var(--line);border-top:0;background:var(--card);
+  border-radius:0 0 var(--radius) var(--radius);padding:17px 20px;margin-bottom:22px}
+.film-meta h3{margin:0 0 4px}
+.film-meta p{margin:0;color:var(--muted);font-size:14.5px}
+.reels{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.reel{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card);
+  cursor:pointer;transition:.16s;text-align:left;padding:0;font:inherit;color:inherit;display:block;width:100%}
+.reel:hover{border-color:var(--sky);transform:translateY(-2px)}
+.reel[aria-current="true"]{border-color:var(--sky);background:rgba(78,168,222,.12)}
+.reel-thumb{position:relative;aspect-ratio:16/9;background:#071729;overflow:hidden}
+.reel-thumb img{width:100%;height:100%;object-fit:cover}
+.reel-thumb .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.reel-thumb .play i{width:38px;height:38px;border-radius:50%;background:rgba(11,31,58,.72);
+  border:1.5px solid rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;font-style:normal}
+.reel-thumb .play i::after{content:"";border-left:11px solid #fff;border-top:7px solid transparent;
+  border-bottom:7px solid transparent;margin-left:3px}
+.reel-b{padding:11px 13px}
+.reel-b .t{color:#fff;font-weight:600;font-size:14px;line-height:1.35;margin-bottom:3px}
+.reel-b .s{color:var(--muted);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase}
+.reel-ext .reel-b .s{color:var(--sky-2)}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(5,14,27,.95);display:none;
+  align-items:center;justify-content:center;padding:44px 20px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:82vh;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.lb-cap{position:absolute;left:0;right:0;bottom:16px;text-align:center;color:var(--muted);
+  font-size:14px;padding:0 60px;line-height:1.5}
+.lb-x,.lb-p,.lb-n{position:absolute;background:rgba(255,255,255,.08);border:1px solid var(--line);
+  color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:.15s}
+.lb-x:hover,.lb-p:hover,.lb-n:hover{background:var(--sky);color:#06243D;border-color:var(--sky)}
+.lb-x{top:16px;right:18px}
+.lb-p{left:16px;top:50%;transform:translateY(-50%)}
+.lb-n{right:16px;top:50%;transform:translateY(-50%)}
+.gal-i{cursor:zoom-in}
+@media(max-width:600px){.lb-p{left:6px}.lb-n{right:6px}.lb-cap{padding:0 14px;font-size:12.5px}}
+
+.feature{border:1px solid rgba(78,168,222,.34);border-radius:var(--radius);overflow:hidden;
+  background:var(--card);margin-bottom:26px}
+.feature img{width:100%;display:block}
+.feature.tall img{max-height:620px;object-fit:contain;background:#071729}
+.feature-cap{padding:18px 22px;border-top:1px solid var(--line)}
+.feature-cap .fc-src{font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--sky);font-weight:700;margin-bottom:7px}
+.feature-cap .fc-hl{color:#fff;font-weight:650;font-size:16.5px;line-height:1.4;margin-bottom:5px}
+.feature-cap .fc-tr{color:var(--muted);font-size:14px;line-height:1.55}
+.feature-cap .fc-tr em{color:var(--sky-2);font-style:normal}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:20px}
+.gal-i{margin:0;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.gal-i img{width:100%;height:190px;object-fit:cover;transition:.3s}
+.gal-i:hover img{transform:scale(1.04)}
+.gal-i figcaption{padding:9px 11px;font-size:12px;color:var(--muted);line-height:1.4}
+.quote{margin:0 0 26px;padding:22px 26px;border-left:3px solid var(--sky);
+  background:rgba(78,168,222,.07);border-radius:0 var(--radius) var(--radius) 0;
+  font-size:17px;line-height:1.6;color:#E6F1FA;font-style:italic}
+.quote cite{display:block;margin-top:11px;font-style:normal;font-size:13px;
+  color:var(--sky-2);letter-spacing:.03em}
+.plinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:13px;margin-top:8px}
+.plink{display:block;padding:15px 17px;border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--card);transition:.16s;text-decoration:none}
+a.plink:hover{border-color:var(--sky);background:rgba(78,168,222,.09);text-decoration:none}
+.plink-off{opacity:.55}
+.pl-n{display:block;color:#fff;font-weight:650;font-size:15px;margin-bottom:3px}
+.pl-u{display:block;color:var(--muted);font-size:12.5px;word-break:break-word}
+footer{padding:34px 0 46px;text-align:center;color:var(--muted);font-size:13px}
+footer .brand{font-size:18px;margin-bottom:8px}
+
+@media(max-width:820px){
+  .hero-in{grid-template-columns:1fr;gap:28px;padding:38px 20px 40px}
+  .portrait{max-width:300px;aspect-ratio:1/1}
+  .nav-links{display:none}
+  section{padding:46px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand">Milos <span>Vasic</span></div>
+    <div class="nav-links">
+      <a href="#film">Film</a>
+      <a href="#academics">Academics</a>
+      <a href="#serbia">Serbia U18</a>
+      <a href="#showcases">Showcases</a>
+      <a href="#aau">AAU</a>
+      <a href="#season">Season</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-in">
+    <div>
+      <div class="eyebrow" id="h-eyebrow"></div>
+      <h1 id="h-name"></h1>
+      <p class="hero-sub" id="h-sub"></p>
+      <p class="hero-meta" id="h-meta"></p>
+      <div class="cta-row" id="h-cta"></div>
+    </div>
+    <div class="portrait" id="h-photo"></div>
+  </div>
+</header>
+
+<div class="stats"><div class="stats-in" id="stat-strip"></div></div>
+
+<section id="film"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-kicker">Film</div>
+    <h2>Highlight Tape</h2>
+    <p class="sec-intro" id="film-intro"></p>
+  </div>
+  <div id="quote-box"></div>
+  <div class="video film-main" id="film-main"></div>
+  <div class="film-meta"><h3 id="film-title"></h3><p id="film-note"></p></div>
+  <div class="reels" id="film-list"></div>
+  <h3 style="margin:34px 0 4px">Recruiting Profiles</h3>
+  <div class="plinks" id="profile-links"></div>
+</div></section>
+
+<section id="academics"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-kicker">Classroom</div>
+    <h2>Academics</h2>
+    <p class="sec-intro" id="acad-intro"></p>
+  </div>
+  <div class="grid-2">
+    <div class="card"><table id="acad-table"></table></div>
+    <div class="card"><h3>Coursework and Interests</h3><ul class="clean" id="acad-list"></ul></div>
+  </div>
+</div></section>
+
+<section id="serbia"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-kicker">Summer 2026</div>
+    <h2 id="serbia-title"></h2>
+    <p class="sec-intro" id="serbia-intro"></p>
+  </div>
+  <div id="serbia-feature"></div>
+  <div class="grid-2">
+    <div><div class="video" id="serbia-video"></div>
+      <div class="card"><h3>What the program was</h3><ul class="clean" id="serbia-list"></ul></div></div>
+    <div class="card"><h3>Coverage and Links</h3><ul class="clean" id="serbia-links"></ul></div>
+  </div>
+  <div id="serbia-gallery"></div>
+</div></section>
+
+<section id="showcases"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-kicker">Open Runs and Events</div>
+    <h2>Hotchkiss Open Runs &amp; Showcases</h2>
+    <p class="sec-intro" id="show-intro"></p>
+  </div>
+  <div class="grid-3" id="show-grid"></div>
+</div></section>
+
+<section id="aau"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-kicker">Club</div>
+    <h2 id="aau-title"></h2>
+    <p class="sec-intro" id="aau-intro"></p>
+  </div>
+  <div class="grid-2">
+    <div><div class="video" id="aau-video"></div></div>
+    <div class="card"><h3>Season Detail</h3><ul class="clean" id="aau-list"></ul></div>
+  </div>
+</div></section>
+
+<section id="season"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-kicker">High School</div>
+    <h2 id="season-title"></h2>
+    <p class="sec-intro" id="season-intro"></p>
+  </div>
+  <div id="season-feature"></div>
+  <div class="champ">
+    <div class="title" id="champ-title"></div>
+    <p id="champ-text"></p>
+  </div>
+  <div class="grid-2">
+    <div><div class="video" id="season-video"></div></div>
+    <div class="card"><h3>Season Notes</h3><ul class="clean" id="season-list"></ul></div>
+  </div>
+  <div id="season-gallery"></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-kicker">Get in touch</div>
+    <h2>Contact &amp; References</h2>
+    <p class="sec-intro">Coaches can contact Milos directly. His high school and club coaches are available as references.</p>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-photo" id="contact-photo"></div>
+    <div class="contact-grid" id="contact-grid"></div>
+  </div>
+</div></section>
+
+<footer>
+  <div class="brand">Milos <span style="color:var(--sky)">Vasic</span></div>
+  <div id="foot-line"></div>
+</footer>
+
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-x" id="lb-x" aria-label="Close">&times;</button>
+  <button class="lb-p" id="lb-p" aria-label="Previous">&#8249;</button>
+  <img id="lb-img" alt="">
+  <button class="lb-n" id="lb-n" aria-label="Next">&#8250;</button>
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script src="profile.js"></script>
+<script src="render.js"></script>
+</body>
+</html>
