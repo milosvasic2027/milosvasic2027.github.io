@@ -26,10 +26,17 @@ const PROFILE = {
      folder and write its name here. The slot is 4 wide by 5 tall. */
   photo: "img/hero-milos.jpg",
 
+  /* The action bar under the headline. Order is deliberate: a coach asks
+     "when can I watch him" before anything else.
+     url accepts a normal address, a "#section" jump, a "mailto:", or
+     "film:<key>" which selects that reel in the film player below. */
   buttons: [
-    { label: "Watch Offensive Film", url: "#film", primary: true },
-    { label: "Email Milos", url: "mailto:Mvilos382@gmail.com", primary: false },
-    { label: "Hudl Profile", url: "https://www.hudl.com/profile/23889377/Milos-Vasic", primary: false }
+    { label: "Open Gym Schedule",   url: "#schedule", primary: true },
+    { label: "Offensive Highlights", url: "film:offense" },
+    { label: "Defensive Highlights", url: "film:defense" },
+    { label: "Email Milos",          url: "mailto:Mvilos382@gmail.com" },
+    { label: "Email Coach Busacca",  url: "" },   // [FILL IN] mailto:his address
+    { label: "Hudl Profile",         url: "https://www.hudl.com/profile/23889377/Milos-Vasic" }
   ],
 
   /* ---------------- 2. STAT STRIP ---------------- */
@@ -41,6 +48,22 @@ const PROFILE = {
     { value: "#39",    label: "New England 2027" },
     { value: "#0",     label: "Hotchkiss" }
   ],
+
+  /* ---------------- 2b. SCHEDULE ---------------- */
+  /* type controls the colour of the tag: "Open Gym", "Game" or "Showcase".
+     Add a row by copying one line. Keep the newest date at the top. */
+  scheduleIntro: "Where to watch Milos play. Open gyms are listed alongside " +
+                 "games, because a coach can see more in an open gym than in a blowout.",
+  schedule: [
+    { date: "September 11, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
+      location: "Lakeville, CT", time: "", note: "Ninety seconds of unedited film is in the film section." },
+    { date: "[FILL IN date]", type: "Game", event: "[FILL IN opponent]",
+      location: "[FILL IN]", time: "[FILL IN]", note: "" },
+    { date: "[FILL IN date]", type: "Showcase", event: "[FILL IN event name]",
+      location: "[FILL IN]", time: "[FILL IN]", note: "" }
+  ],
+  scheduleNote: "Dates can move. Email before you travel and Milos will confirm. " +
+                "The Hotchkiss athletics site carries the full varsity schedule.",
 
   /* ---------------- 3. FILM ---------------- */
   filmIntro: "Offensive film plays below. Full games are available on request.",
@@ -63,12 +86,14 @@ const PROFILE = {
      ------------------------------------------------------------------ */
   films: [
     {
+      key:   "offense",
       title: "Offensive Highlights 2026",
       note:  "Hotchkiss varsity. Two minutes forty seconds.",
       video: "video/milos-vasic-offense-2026.mp4",
       poster: "img/poster-offense.jpg"
     },
     {
+      key:   "opengym",
       title: "Open Gym \u00b7 September 2026",
       note:  "Hotchkiss preseason, September 11, 2026. Ninety seconds, unedited, " +
              "no cuts and no commentary.",
@@ -76,6 +101,7 @@ const PROFILE = {
       poster: "img/poster-open-gym.jpg"
     },
     {
+      key:   "final",
       title: "NEPSAC Final \u00b7 Steal and Dunk",
       note:  "Hotchkiss against Phillips Academy Andover, March 8, 2026. " +
              "Milos takes the ball away and finishes at the other end.",
@@ -83,10 +109,12 @@ const PROFILE = {
       poster: "img/poster-final-dunk.jpg"
     },
     {
+      key:   "defense",
       title: "Defensive Highlights 2026",
-      note:  "Press defense, rim protection and multi-position coverage.",
-      video: "",                       // [FILL IN] paste the unlisted YouTube link
-      thumb: "img/serbia-dunk.jpg"
+      note:  "Hotchkiss varsity. One minute twenty seconds. Press work, " +
+             "closeouts and rim protection.",
+      video: "video/milos-vasic-defense-2026.mp4",
+      poster: "img/poster-defense.jpg"
     },
     {
       title: "Full Game \u2014 [FILL IN opponent]",
@@ -135,19 +163,21 @@ const PROFILE = {
 
   /* ---------------- 5. SERBIA U18 ---------------- */
   serbiaTitle: "Serbia U18 National Team Program",
-  serbiaIntro: "In the summer of 2026 I trained with the Serbia men's U18 national team program. " +
-               "The Basketball Federation of Serbia ran the control training sessions and " +
-               "announced them on its official channel. The photographs are from those sessions.",
+  serbiaIntro: "In 2026 the Basketball Federation of Serbia called me up to the men's " +
+               "U18 national team. I trained with the squad in Belgrade in May and again " +
+               "from June. The federation announced the sessions on its official channel.",
   serbiaVideo: "",                       // [FILL IN] optional clip
   serbiaPoster: "",
   serbiaList: [
-    "<b>Program:</b> Serbia men's U18 national team, control training sessions",
+    "<b>Program:</b> Serbia men's U18 national team",
     "<b>Governing body:</b> Basketball Federation of Serbia (KSS)",
-    "<b>Dates:</b> [FILL IN]",
-    "<b>Location:</b> [FILL IN — the team photo shows Hotel Crni Vrh]",
-    "<b>Head coach:</b> [FILL IN]",
+    "<b>First call-up:</b> preparations in Belgrade, May 25 to 27, 2026, at the Institute of Sports and Sports Medicine",
+    "<b>Second call-up:</b> preparations from June 22, 2026, in Belgrade",
+    "<b>Listed as:</b> Vasi\u0107 Milo\u0161 \u2014 Hotchkiss School, Connecticut (USA)",
+    "<b>Called up by:</b> Nenad Krsti\u0107, Vice President of the Men's National Teams of Serbia",
     "<b>Role:</b> [FILL IN]"
   ],
+
   /* The federation post that leads the section. A US coach cannot read Cyrillic,
      so the translation carries the meaning. */
   serbiaFeature: {

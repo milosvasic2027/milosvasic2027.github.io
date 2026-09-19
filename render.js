@@ -83,9 +83,22 @@
   $("h-meta").textContent = P.intro || "";
   document.title = (P.name || "Recruiting Profile") + " | " + (P.tagline || "");
 
-  $("h-cta").innerHTML = (P.buttons || []).map(function (b) {
+  $("h-cta").innerHTML = (P.buttons || []).map(function (b, i) {
+    var u = String(b.url || "");
+    /* a target that is still a placeholder renders as a dashed, inert chip
+       rather than a link that goes nowhere */
+    if (!u || /\[FILL IN/i.test(u)) {
+      return '<span class="btn btn-off" title="Not set yet">' + esc(b.label) + "</span>";
+    }
+    if (/^film:/.test(u)) {
+      return '<a class="btn ' + (b.primary ? "btn-primary" : "btn-ghost") +
+             '" href="#film" data-goto-film="' + esc(u.slice(5)) + '">' +
+             esc(b.label) + "</a>";
+    }
     return '<a class="btn ' + (b.primary ? "btn-primary" : "btn-ghost") +
-           '" href="' + esc(b.url) + '">' + esc(b.label) + "</a>";
+           '" href="' + esc(u) + '"' +
+           (/^https?:/.test(u) ? ' target="_blank" rel="noopener"' : "") + ">" +
+           esc(b.label) + "</a>";
   }).join("");
 
   $("h-photo").innerHTML = P.photo
@@ -97,6 +110,27 @@
     return '<div class="stat"><div class="v">' + esc(s.value) +
            '</div><div class="l">' + esc(s.label) + "</div></div>";
   }).join("");
+
+  /* ---- schedule ---- */
+  var CHIP = { "open gym": "chip-open", "game": "chip-game", "showcase": "chip-show" };
+  if ($("sched-intro")) $("sched-intro").textContent = P.scheduleIntro || "";
+  if ($("sched-foot")) $("sched-foot").textContent = P.scheduleNote || "";
+  if ($("sched-table")) {
+    var rows = (P.schedule || []);
+    $("sched-table").innerHTML = rows.length
+      ? '<div class="sched-row sched-head"><div>Date</div><div>Event</div>' +
+        "<div>Location</div><div>Time</div></div>" +
+        rows.map(function (r) {
+          var cls = CHIP[String(r.type || "").toLowerCase()] || "chip-game";
+          return '<div class="sched-row"><div class="sched-d">' + esc(r.date) +
+            '</div><div class="sched-e">' +
+            (r.type ? '<span class="chip ' + cls + '">' + esc(r.type) + "</span>" : "") +
+            esc(r.event) + (r.note ? "<small>" + esc(r.note) + "</small>" : "") +
+            '</div><div class="sched-l">' + esc(r.location || "") +
+            '</div><div class="sched-t">' + esc(r.time || "") + "</div></div>";
+        }).join("")
+      : '<div class="sched-row"><div class="sched-e">No dates listed yet.</div></div>';
+  }
 
   /* ---- film ---- */
   $("film-intro").textContent = P.filmIntro || "";
@@ -137,6 +171,21 @@
     document.querySelectorAll(".reel[data-play]"),
     function (b) {
       b.addEventListener("click", function () { showFilm(+b.getAttribute("data-play")); });
+    });
+
+  /* hero buttons that name a specific reel select it, then scroll to the player */
+  Array.prototype.forEach.call(
+    document.querySelectorAll("[data-goto-film]"),
+    function (a) {
+      a.addEventListener("click", function () {
+        var want = a.getAttribute("data-goto-film");
+        var idx = -1;
+        playable.forEach(function (f, i) {
+          if (idx === -1 && String(f.key || "") === want) idx = i;
+        });
+        if (idx === -1 && /^\d+$/.test(want)) idx = parseInt(want, 10);
+        if (idx > -1) showFilm(idx);
+      });
     });
 
   if (playable.length) showFilm(0);
