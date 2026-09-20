@@ -303,7 +303,16 @@
   /* ---- aau ---- */
   $("aau-title").textContent = P.aauTitle || "";
   $("aau-intro").textContent = P.aauIntro || "";
-  $("aau-video").innerHTML = videoBlock(P.aauVideo, "AAU clips", P.aauPoster);
+  /* no clip yet means no empty frame: a coach must never see a placeholder */
+  var avBox = $("aau-video");
+  var avWrap = avBox && avBox.parentNode;
+  if (unset(P.aauVideo)) {
+    if (avWrap) avWrap.style.display = "none";
+  } else {
+    if (avWrap) avWrap.style.display = "";
+    avBox.className = P.aauPortrait ? "video portrait" : "video";
+    avBox.innerHTML = videoBlock(P.aauVideo, "AAU clips", P.aauPoster);
+  }
   var avn = $("aau-video-note");
   if (avn) avn.textContent = unset(P.aauVideoNote) ? "" : String(P.aauVideoNote);
   $("aau-list").innerHTML = clean(P.aauList).map(function (i) {

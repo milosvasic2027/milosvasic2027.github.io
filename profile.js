@@ -295,10 +295,16 @@ const PROFILE = {
   aauTitle: "PSA Cardinals · Nike EYBL",
   aauIntro: "I joined the PSA Cardinals in February 2025. " +
             "The program plays the Nike EYBL circuit out of New York.",
-  aauVideo: "video/milos-nepsac-final-dunk.mp4",
-  aauPoster: "img/poster-final-dunk.jpg",
-  aauVideoNote: "Steal and dunk. Hotchkiss against Phillips Academy Andover, " +
-                "NEPSAC Class A final, March 8, 2026.",
+  /* TO ADD THE PSA CLIP:
+     1. Upload the file to the repository at  video/milos-psa-dunk.mp4
+        (Add file > Upload files, then drag it into the "video" folder path).
+     2. Remove the two slashes in front of the two lines below.
+     3. Save. The clip then plays in this section.
+     While aauVideo is empty the section shows no video frame at all. */
+  aauVideo: "video/milos-psa-dunk-2026.mp4",
+  aauPoster: "img/poster-psa-dunk.jpg",
+  aauPortrait: true,            // the clip was filmed on a phone, held upright
+  aauVideoNote: "PSA Cardinals \u00b7 Nike EYBL \u00b7 June 2026.",
   aauList: [
     "<b>Team:</b> PSA Cardinals",
     "<b>Circuit:</b> Nike EYBL",
