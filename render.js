@@ -317,6 +317,21 @@
       : "";
   }
 
+  /* ---- published coverage: real quotes, each with its source ---- */
+  var pb = $("press-box");
+  if (pb) {
+    var press = (P.press || []).filter(function (q) { return q && q.text; });
+    pb.innerHTML = press.length
+      ? '<div class="press-h">What scouts have written</div><div class="press">' +
+        press.map(function (q) {
+          var cite = esc(q.source || "");
+          if (q.url) cite = '<a href="' + esc(q.url) + '" target="_blank" rel="noopener">' + cite + "</a>";
+          return '<div class="press-i"><p>&ldquo;' + esc(q.text) + '&rdquo;</p><cite>' +
+                 cite + (q.date ? " &middot; " + esc(q.date) : "") + "</cite></div>";
+        }).join("") + "</div>"
+      : "";
+  }
+
   /* ---- recruiting profile links ---- */
   var pl = $("profile-links");
   if (pl) {

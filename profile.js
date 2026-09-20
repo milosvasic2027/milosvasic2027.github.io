@@ -45,7 +45,7 @@ const PROFILE = {
     { value: "6'9\"",  label: "Height" },
     { value: "205",    label: "Weight (lb)" },
     { value: "SF/PF",  label: "Position" },
-    { value: "#39",    label: "New England 2027" },
+    { value: "U18",    label: "Serbia National Team" },
     { value: "#0",     label: "Hotchkiss" }
   ],
 
@@ -69,10 +69,36 @@ const PROFILE = {
   filmIntro: "Offensive film plays below. Full games are available on request.",
 
   quote: {
-    text: "Vasic is a tremendous prospect that has added a silky-smooth jumper to his long " +
-          "frame and wingspan. He gives Hotchkiss balance inside and out.",
-    source: "New England Recruiting Report, February 2026"
+    text: "Ghee is the offensive engine, while fellow returning starters Preston Merrick " +
+          "and Milos Vasic give them balance inside and out.",
+    source: "New England Recruiting Report \u00b7 Nick Cozzolino \u00b7 February 25, 2026"
   },
+
+  /* ---------------- 3b. PUBLISHED COVERAGE ----------------
+     Every entry here must be a real sentence from a real article.
+     Keep the source and the date with the text. Do not edit the words. */
+  press: [
+    {
+      text: "Hotchkiss 6'8 wing Milos Vasic takes the sixth spot as his versatility " +
+            "on both ends of the floor is impressive.",
+      source: "New England Recruiting Report \u2014 Connecticut 2027 Ranking Drop (No. 6 in Connecticut)",
+      date:   "January 8, 2025",
+      url:    "https://www.newenglandrecruitingreport.com/"
+    },
+    {
+      text: "A new name to know in New England is Milos Vasic. His two-way play is impressive " +
+            "as he shows great defensive intangibles, and has a smooth shooting stroke at his size.",
+      source: "New England Recruiting Report",
+      date:   "October 2, 2024",
+      url:    "https://www.newenglandrecruitingreport.com/"
+    },
+    {
+      text: "Vasic is the definition of what teams are looking for in this day in age as a big wing.",
+      source: "Prep Hoops \u00b7 Mickey Parrella",
+      date:   "September 8, 2024",
+      url:    "https://prephoops.com/"
+    }
+  ],
 
   /* ------------------------------------------------------------------
      FILM INDEX. The first entry with a "video" loads in the big player.
@@ -258,6 +284,8 @@ const PROFILE = {
     "<b>Program director:</b> Terrance \"Munch\" Williams",
     "<b>Joined:</b> February 2025",
     "<b>2025 result:</b> Reached the Nike EYBL Peach Jam with the 16U team",
+    "<b>2026 season:</b> On the PSA Cardinals roster alongside top United States prospects. " +
+      "Milos missed Peach Jam because he was with the Serbia U18 national team.",
     "<b>Recognition:</b> Defensive Player of the Game, more than once at Peach Jam",
     "<b>Averages:</b> [FILL IN points, rebounds, assists]"
   ],

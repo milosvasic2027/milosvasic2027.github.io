@@ -242,6 +242,14 @@ td:first-child{color:#fff;font-weight:600}
   font-size:17px;line-height:1.6;color:#E6F1FA;font-style:italic}
 .quote cite{display:block;margin-top:11px;font-style:normal;font-size:13px;
   color:var(--sky-2);letter-spacing:.03em}
+.press{display:grid;gap:14px;margin:0 0 26px}
+.press-i{border:1px solid var(--line);border-radius:var(--radius);padding:17px 20px;
+  background:var(--card)}
+.press-i p{margin:0 0 9px;color:#E6F1FA;font-size:15px;line-height:1.6}
+.press-i cite{font-style:normal;font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+.press-i cite a{color:var(--sky-2)}
+.press-h{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sky);
+  font-weight:700;margin:0 0 13px}
 .plinks{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:13px;margin-top:8px}
 .plink{display:block;padding:15px 17px;border:1px solid var(--line);border-radius:var(--radius);
   background:var(--card);transition:.16s;text-decoration:none}
@@ -310,6 +318,7 @@ footer .brand{font-size:18px;margin-bottom:8px}
     <p class="sec-intro" id="film-intro"></p>
   </div>
   <div id="quote-box"></div>
+  <div id="press-box"></div>
   <div class="video film-main" id="film-main"></div>
   <div class="film-meta"><h3 id="film-title"></h3><p id="film-note"></p></div>
   <div class="reels" id="film-list"></div>
