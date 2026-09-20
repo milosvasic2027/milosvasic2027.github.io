@@ -82,7 +82,9 @@ const PROFILE = {
                 "The Hotchkiss athletics site carries the full varsity schedule.",
 
   /* ---------------- 3. FILM ---------------- */
-  filmIntro: "Offensive film plays below. Full games are available on request.",
+  filmIntro: "Four reels: offensive highlights, defensive highlights, a September open gym, " +
+             "and the steal and dunk from the NEPSAC final. Select a reel to play it. " +
+             "Full games are available on request.",
 
   quote: {
     text: "Ghee is the offensive engine, while fellow returning starters Preston Merrick " +
@@ -293,8 +295,10 @@ const PROFILE = {
   aauTitle: "PSA Cardinals · Nike EYBL",
   aauIntro: "I joined the PSA Cardinals in February 2025. " +
             "The program plays the Nike EYBL circuit out of New York.",
-  aauVideo: "",                      // [FILL IN] AAU clip
-  aauPoster: "",
+  aauVideo: "video/milos-nepsac-final-dunk.mp4",
+  aauPoster: "img/poster-final-dunk.jpg",
+  aauVideoNote: "Steal and dunk. Hotchkiss against Phillips Academy Andover, " +
+                "NEPSAC Class A final, March 8, 2026.",
   aauList: [
     "<b>Team:</b> PSA Cardinals",
     "<b>Circuit:</b> Nike EYBL",

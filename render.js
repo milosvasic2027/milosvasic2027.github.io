@@ -195,14 +195,24 @@
   Array.prototype.forEach.call(
     document.querySelectorAll("[data-goto-film]"),
     function (a) {
-      a.addEventListener("click", function () {
+      a.addEventListener("click", function (ev) {
         var want = a.getAttribute("data-goto-film");
         var idx = -1;
         playable.forEach(function (f, i) {
           if (idx === -1 && String(f.key || "") === want) idx = i;
         });
         if (idx === -1 && /^\d+$/.test(want)) idx = parseInt(want, 10);
-        if (idx > -1) showFilm(idx);
+        if (idx < 0) return;
+        if (ev && ev.preventDefault) ev.preventDefault();
+        showFilm(idx);
+        /* land on the player itself, not on the heading above it */
+        var stage = $("film-main");
+        if (stage && stage.scrollIntoView) {
+          try { stage.scrollIntoView({ behavior: "smooth", block: "center" }); }
+          catch (e) { stage.scrollIntoView(); }
+          stage.classList.add("stage-flash");
+          setTimeout(function () { stage.classList.remove("stage-flash"); }, 900);
+        }
       });
     });
 
@@ -294,6 +304,8 @@
   $("aau-title").textContent = P.aauTitle || "";
   $("aau-intro").textContent = P.aauIntro || "";
   $("aau-video").innerHTML = videoBlock(P.aauVideo, "AAU clips", P.aauPoster);
+  var avn = $("aau-video-note");
+  if (avn) avn.textContent = unset(P.aauVideoNote) ? "" : String(P.aauVideoNote);
   $("aau-list").innerHTML = clean(P.aauList).map(function (i) {
     return "<li>" + rich(i) + "</li>";
   }).join("");
