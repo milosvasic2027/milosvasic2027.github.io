@@ -6,6 +6,20 @@
     return String(s == null ? "" : s)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   };
+  /* A value still marked [FILL IN] must never reach a visitor. Anything that
+     is only a placeholder is dropped from the page instead of printed. */
+  var PH = /\[\s*(FILL IN|CONFIRM)[^\]]*\]/i;
+  function unset(v) {
+    if (v == null) return true;
+    var t = String(v).trim();
+    if (!t) return true;
+    return PH.test(t.replace(/^<b>[^<]*<\/b>\s*:?\s*/i, "").trim()) &&
+           !t.replace(PH, "").replace(/^<b>[^<]*<\/b>\s*:?\s*/i, "").trim();
+  }
+  function clean(list) {
+    return (list || []).filter(function (x) { return !unset(x); });
+  }
+
   /* allow the <b> tags used in the list fields */
   var rich = function (s) {
     return esc(s).replace(/&lt;b&gt;/g, "<b>").replace(/&lt;\/b&gt;/g, "</b>");
@@ -70,8 +84,9 @@
   function gallery(items) {
     if (!items || !items.length) return "";
     return '<div class="gal">' + items.map(function (g) {
-      return '<figure class="gal-i"><img src="' + esc(g.src) + '" alt="' + esc(g.caption || "") +
-             '" loading="lazy">' + (g.caption ? "<figcaption>" + esc(g.caption) + "</figcaption>" : "") +
+      var cap = unset(g.caption) ? "" : g.caption;
+      return '<figure class="gal-i"><img src="' + esc(g.src) + '" alt="' + esc(cap) +
+             '" loading="lazy">' + (cap ? "<figcaption>" + esc(cap) + "</figcaption>" : "") +
              "</figure>";
     }).join("") + "</div>";
   }
@@ -116,18 +131,21 @@
   if ($("sched-intro")) $("sched-intro").textContent = P.scheduleIntro || "";
   if ($("sched-foot")) $("sched-foot").textContent = P.scheduleNote || "";
   if ($("sched-table")) {
-    var rows = (P.schedule || []);
+    var rows = (P.schedule || []).filter(function (r) { return !unset(r.date); });
     $("sched-table").innerHTML = rows.length
       ? '<div class="sched-row sched-head"><div>Date</div><div>Event</div>' +
         "<div>Location</div><div>Time</div></div>" +
         rows.map(function (r) {
           var cls = CHIP[String(r.type || "").toLowerCase()] || "chip-game";
+          var loc = unset(r.location) ? "" : r.location;
+          var tm  = unset(r.time) ? "" : r.time;
+          var nt  = unset(r.note) ? "" : r.note;
           return '<div class="sched-row"><div class="sched-d">' + esc(r.date) +
             '</div><div class="sched-e">' +
             (r.type ? '<span class="chip ' + cls + '">' + esc(r.type) + "</span>" : "") +
-            esc(r.event) + (r.note ? "<small>" + esc(r.note) + "</small>" : "") +
-            '</div><div class="sched-l">' + esc(r.location || "") +
-            '</div><div class="sched-t">' + esc(r.time || "") + "</div></div>";
+            esc(r.event) + (nt ? "<small>" + esc(nt) + "</small>" : "") +
+            '</div><div class="sched-l">' + esc(loc) +
+            '</div><div class="sched-t">' + esc(tm) + "</div></div>";
         }).join("")
       : '<div class="sched-row"><div class="sched-e">No dates listed yet.</div></div>';
   }
@@ -199,10 +217,11 @@
   $("acad-intro").textContent = P.academicsIntro || "";
   $("acad-table").innerHTML =
     "<tr><th>Item</th><th>Detail</th></tr>" +
-    (P.academicsTable || []).map(function (r) {
-      return "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td></tr>";
-    }).join("");
-  $("acad-list").innerHTML = (P.academicsList || []).map(function (i) {
+    (P.academicsTable || []).filter(function (r) { return !unset(r[1]); })
+      .map(function (r) {
+        return "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td></tr>";
+      }).join("");
+  $("acad-list").innerHTML = clean(P.academicsList).map(function (i) {
     return "<li>" + rich(i) + "</li>";
   }).join("");
 
@@ -231,11 +250,12 @@
   if (nf) nf.innerHTML = featureHTML(P.seasonFeature);
   var ng = $("season-gallery");
   if (ng) ng.innerHTML = gallery(P.seasonGallery);
-  $("serbia-list").innerHTML = (P.serbiaList || []).map(function (i) {
+  $("serbia-list").innerHTML = clean(P.serbiaList).map(function (i) {
     return "<li>" + rich(i) + "</li>";
   }).join("");
-  $("serbia-links").innerHTML = (P.serbiaLinks || []).length
-    ? P.serbiaLinks.map(function (l) {
+  var sLinks = (P.serbiaLinks || []).filter(function (l) { return l.url || !unset(l.label); });
+  $("serbia-links").innerHTML = sLinks.length
+    ? sLinks.map(function (l) {
         return l.url
           ? '<li><a href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
             esc(l.label) + "</a></li>"
@@ -245,7 +265,9 @@
 
   /* ---- showcases ---- */
   $("show-intro").textContent = P.showcaseIntro || "";
-  $("show-grid").innerHTML = (P.showcases || []).map(function (s) {
+  $("show-grid").innerHTML = (P.showcases || [])
+    .filter(function (c) { return !unset(c.title); })
+    .map(function (s) {
     /* focus: where to anchor the crop, for example "center 20%" for a portrait.
        Without a clip and without a photograph the frame is left out entirely,
        so a coach never sees an empty box. */
@@ -262,8 +284,8 @@
         ? '<div class="video" style="border-radius:0;border:0;' +
           'border-bottom:1px solid var(--line);margin:0">' + media + "</div>"
         : "") +
-      '<div class="evt-body"><div class="date">' + esc(s.date) + "</div><h3>" +
-      esc(s.title) + "</h3><p>" + esc(s.text) + '</p><div class="tags">' +
+      '<div class="evt-body"><div class="date">' + esc(unset(s.date) ? "" : s.date) + "</div><h3>" +
+      esc(s.title) + "</h3><p>" + esc(unset(s.text) ? "" : s.text) + '</p><div class="tags">' +
       (s.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") +
       "</div></div></article>";
   }).join("");
@@ -272,7 +294,7 @@
   $("aau-title").textContent = P.aauTitle || "";
   $("aau-intro").textContent = P.aauIntro || "";
   $("aau-video").innerHTML = videoBlock(P.aauVideo, "AAU clips", P.aauPoster);
-  $("aau-list").innerHTML = (P.aauList || []).map(function (i) {
+  $("aau-list").innerHTML = clean(P.aauList).map(function (i) {
     return "<li>" + rich(i) + "</li>";
   }).join("");
 
@@ -282,7 +304,7 @@
   $("champ-title").textContent = P.champTitle || "";
   $("champ-text").textContent = P.champText || "";
   $("season-video").innerHTML = videoBlock(P.seasonVideo, "Season clips", P.seasonPoster);
-  $("season-list").innerHTML = (P.seasonList || []).map(function (i) {
+  $("season-list").innerHTML = clean(P.seasonList).map(function (i) {
     return "<li>" + rich(i) + "</li>";
   }).join("");
 
@@ -298,7 +320,9 @@
   /* ---- recruiting profile links ---- */
   var pl = $("profile-links");
   if (pl) {
-    pl.innerHTML = (P.profileLinks || []).map(function (l) {
+    pl.innerHTML = (P.profileLinks || [])
+      .filter(function (l) { return l.url || !unset(l.note); })
+      .map(function (l) {
       return l.url
         ? '<a class="plink" href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
           '<span class="pl-n">' + esc(l.label) + "</span><span class=\"pl-u\">" +
@@ -317,10 +341,13 @@
     if (!P.contactPhoto) cp.style.display = "none";
   }
   $("contact-grid").innerHTML = (P.contacts || []).map(function (c) {
-    var d = esc(c.detail);
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.detail)) {
-      d = '<a href="mailto:' + esc(c.detail) + '">' + esc(c.detail) + "</a>";
-    }
+    /* make every address and number inside the line clickable, so a coach on a
+       phone can tap to write or to call */
+    var d = esc(c.detail)
+      .replace(/([A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,})/g,
+               '<a href="mailto:$1">$1</a>')
+      .replace(/(\b\d{3}-\d{3}-\d{4}\b)/g,
+               '<a href="tel:$1">$1</a>');
     return '<div class="contact-card"><div class="role">' + esc(c.role) +
       '</div><div class="nm">' + esc(c.name) + '</div><div class="dt">' + d + "</div></div>";
   }).join("");

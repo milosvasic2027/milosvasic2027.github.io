@@ -35,7 +35,7 @@ const PROFILE = {
     { label: "Offensive Highlights", url: "film:offense" },
     { label: "Defensive Highlights", url: "film:defense" },
     { label: "Email Milos",          url: "mailto:Mvilos382@gmail.com" },
-    { label: "Email Coach Busacca",  url: "" },   // [FILL IN] mailto:his address
+    { label: "Email Coach Busacca",  url: "mailto:jbusacca@hotchkiss.org" },
     { label: "Hudl Profile",         url: "https://www.hudl.com/profile/23889377/Milos-Vasic" }
   ],
 
@@ -43,7 +43,7 @@ const PROFILE = {
   stats: [
     { value: "2027",   label: "Class" },
     { value: "6'9\"",  label: "Height" },
-    { value: "200",    label: "Weight (lb)" },
+    { value: "205",    label: "Weight (lb)" },
     { value: "SF/PF",  label: "Position" },
     { value: "#39",    label: "New England 2027" },
     { value: "#0",     label: "Hotchkiss" }
@@ -146,9 +146,9 @@ const PROFILE = {
     ["Graduation year", "2027"],
     ["Conference",      "Founders League / NEPSAC Class A"],
     ["Head coach",      "Coach Busacca"],
-    ["Cumulative GPA",  "[FILL IN]"],
-    ["SAT",             "[FILL IN]"],
-    ["ACT",             "[FILL IN]"],
+    ["Cumulative GPA",  "3.5"],
+    ["SAT",             "1150"],
+    ["ACT",             "Not taken"],
     ["Academic honors", "[FILL IN]"]
   ],
   academicsList: [
@@ -158,24 +158,26 @@ const PROFILE = {
     "<b>Languages:</b> English, Serbian",
     "<b>Nationality:</b> American and Serbian",
     "<b>Hometown:</b> New York, New York",
-    "<b>Measurements:</b> 6'9\" and 200 lb (206 cm and 92 kg)"
+    "<b>Measurements:</b> 6'9\" and 205 lb (206 cm and 93 kg)"
   ],
 
   /* ---------------- 5. SERBIA U18 ---------------- */
   serbiaTitle: "Serbia U18 National Team Program",
   serbiaIntro: "In 2026 the Basketball Federation of Serbia called me up to the men's " +
-               "U18 national team. I trained with the squad in Belgrade in May and again " +
-               "from June. The federation announced the sessions on its official channel.",
+               "U18 national team. I came through the invitational camp into the national " +
+               "team training group. I trained with the squad in Belgrade in May and again " +
+               "in June. The federation announced the sessions on its official channel.",
   serbiaVideo: "",                       // [FILL IN] optional clip
   serbiaPoster: "",
   serbiaList: [
     "<b>Program:</b> Serbia men's U18 national team",
     "<b>Governing body:</b> Basketball Federation of Serbia (KSS)",
     "<b>First call-up:</b> preparations in Belgrade, May 25 to 27, 2026, at the Institute of Sports and Sports Medicine",
-    "<b>Second call-up:</b> preparations from June 22, 2026, in Belgrade",
+    "<b>Second call-up:</b> two weeks of preparations from June 22, 2026, in Belgrade",
     "<b>Listed as:</b> Vasi\u0107 Milo\u0161 \u2014 Hotchkiss School, Connecticut (USA)",
     "<b>Called up by:</b> Nenad Krsti\u0107, Vice President of the Men's National Teams of Serbia",
-    "<b>Role:</b> [FILL IN]"
+    "<b>Selection:</b> came through the invitational camp into the national team training group",
+    "<b>Standing:</b> among the top prospects of his age group in Serbia"
   ],
 
   /* The federation post that leads the section. A US coach cannot read Cyrillic,
@@ -313,10 +315,14 @@ const PROFILE = {
   contactPhoto: "img/milos-headshot.jpg",
 
   contacts: [
-    { role: "Player",            name: "Milos Vasic",    detail: "Mvilos382@gmail.com" },
-    { role: "Parent",            name: "Ninoslav Vasic", detail: "Ninoslav.vasic@gmail.com" },
-    { role: "High School Coach", name: "Coach Busacca",  detail: "The Hotchkiss School · [FILL IN email and phone]" },
-    { role: "AAU Program Director", name: "Terrance \"Munch\" Williams", detail: "PSA Cardinals · [FILL IN email and phone]" }
+    { role: "Player",               name: "Milos Vasic",
+      detail: "Mvilos382@gmail.com \u00b7 929-418-5666" },
+    { role: "Parent",               name: "Ninoslav Vasic",
+      detail: "Ninoslav.vasic@gmail.com" },
+    { role: "High School Coach",    name: "Coach Busacca",
+      detail: "The Hotchkiss School \u00b7 jbusacca@hotchkiss.org" },
+    { role: "AAU Program Director", name: "Terrance \"Munch\" Williams",
+      detail: "PSA Cardinals \u00b7 psa.mitch@gmail.com" }
   ],
 
   footer: "Milos Vasic · Class of 2027 · The Hotchkiss School, Lakeville CT · Updated " +
