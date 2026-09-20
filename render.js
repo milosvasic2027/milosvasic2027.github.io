@@ -328,7 +328,8 @@
           if (q.url) cite = '<a href="' + esc(q.url) + '" target="_blank" rel="noopener">' + cite + "</a>";
           return '<div class="press-i"><p>&ldquo;' + esc(q.text) + '&rdquo;</p><cite>' +
                  cite + (q.date ? " &middot; " + esc(q.date) : "") + "</cite></div>";
-        }).join("") + "</div>"
+        }).join("") + "</div>" +
+        (unset(P.pressNote) ? "" : '<p class="press-n">' + esc(P.pressNote) + "</p>")
       : "";
   }
 

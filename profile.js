@@ -108,6 +108,8 @@ const PROFILE = {
       url:    "https://prephoops.com/"
     }
   ],
+  pressNote: "Reports from 2024 and 2025 list Milos at 6 feet 8 inches. " +
+             "He measures 6 feet 9 inches in 2026.",
 
   /* ------------------------------------------------------------------
      FILM INDEX. The first entry with a "video" loads in the big player.
