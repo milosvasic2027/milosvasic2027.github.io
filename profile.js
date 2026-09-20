@@ -147,7 +147,7 @@ const PROFILE = {
     ["Conference",      "Founders League / NEPSAC Class A"],
     ["Head coach",      "Coach Busacca"],
     ["Cumulative GPA",  "3.5"],
-    ["SAT",             "1150"],
+    ["SAT",             "Results pending"],
     ["ACT",             "Not taken"],
     ["Academic honors", "[FILL IN]"]
   ],
@@ -177,6 +177,8 @@ const PROFILE = {
     "<b>Listed as:</b> Vasi\u0107 Milo\u0161 \u2014 Hotchkiss School, Connecticut (USA)",
     "<b>Called up by:</b> Nenad Krsti\u0107, Vice President of the Men's National Teams of Serbia",
     "<b>Selection:</b> came through the invitational camp into the national team training group",
+    "<b>Named in:</b> the 18-player group for the European Championship preparations",
+    "<b>Alongside:</b> players from Real Madrid, Bayern Munich, Partizan, Crvena zvezda and Mega",
     "<b>Standing:</b> among the top prospects of his age group in Serbia"
   ],
 
@@ -194,7 +196,8 @@ const PROFILE = {
   serbiaLinks: [
     { label: "Basketball Federation of Serbia — official site", url: "https://kss.rs/" },
     { label: "@kssrbije on Instagram — federation account",     url: "https://instagram.com/kssrbije" },
-    { label: "[FILL IN the exact Instagram post about the U18 sessions]", url: "" }
+    { label: "KSS \u00b7 \u201cMen\u2019s U18 national team started preparations for the European Championship\u201d, June 23, 2026",
+      url: "https://kss.rs/muska-u18-reprezentacija-pocela-pripreme-za-evropsko-prvenstvo/" }
   ],
   /* Photo gallery. Edit the captions. Add or remove lines freely. */
   serbiaGallery: [
