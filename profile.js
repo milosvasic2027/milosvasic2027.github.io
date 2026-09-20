@@ -55,14 +55,23 @@ const PROFILE = {
   scheduleIntro: "Where to watch Milos play. Open gyms are listed alongside " +
                  "games, because a coach can see more in an open gym than in a blowout.",
   schedule: [
-    { date: "September 11, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
-      location: "Lakeville, CT", time: "", note: "Ninety seconds of unedited film is in the film section." },
-    { date: "[FILL IN date]", type: "Game", event: "[FILL IN opponent]",
-      location: "[FILL IN]", time: "[FILL IN]", note: "" },
-    { date: "[FILL IN date]", type: "Showcase", event: "[FILL IN event name]",
-      location: "[FILL IN]", time: "[FILL IN]", note: "" }
+    { date: "September 21, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
+      location: "The Hotchkiss School, Lakeville, CT", time: "4:45 PM", note: "" },
+    { date: "September 23, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
+      location: "The Hotchkiss School, Lakeville, CT", time: "1:00 PM", note: "" },
+    { date: "September 24, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
+      location: "The Hotchkiss School, Lakeville, CT", time: "4:45 PM", note: "" },
+    { date: "September 26, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
+      location: "The Hotchkiss School, Lakeville, CT", time: "1:00 PM", note: "" },
+    { date: "September 27, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
+      location: "The Hotchkiss School, Lakeville, CT", time: "11:00 AM", note: "" },
+    { date: "September 28, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
+      location: "The Hotchkiss School, Lakeville, CT", time: "4:45 PM", note: "" },
+    { date: "September 30, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
+      location: "The Hotchkiss School, Lakeville, CT", time: "1:00 PM", note: "" }
   ],
-  scheduleNote: "Dates can move. Email before you travel and Milos will confirm. " +
+  scheduleNote: "Open gym times come from the Hotchkiss September schedule. Dates can move. " +
+                "Email before you travel and Milos will confirm. " +
                 "The Hotchkiss athletics site carries the full varsity schedule.",
 
   /* ---------------- 3. FILM ---------------- */
