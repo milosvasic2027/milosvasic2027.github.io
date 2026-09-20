@@ -39,6 +39,13 @@ const PROFILE = {
     { label: "Hudl Profile",         url: "https://www.hudl.com/profile/23889377/Milos-Vasic" }
   ],
 
+  /* ---------------- 1b. VISIT TRACKER ----------------
+     The campaign puts a short code on the link it emails to each coach:
+       https://milosvasic2027.github.io/?c=a1b2c3d4
+     When the page opens with that code, it tells the campaign sheet.
+     Clear this address to turn the tracking off. */
+  tracker: "https://script.google.com/macros/s/AKfycbwWImK7ZBrYjXaLaZrJWLFar8NESj1HKeJ8OGx2160twR6FIuWOhyRfy_bhW22YEIHF/exec",
+
   /* ---------------- 2. STAT STRIP ---------------- */
   stats: [
     { value: "2027",   label: "Class" },

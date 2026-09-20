@@ -317,6 +317,18 @@
       : "";
   }
 
+
+  /* ---- visit beacon: tells the campaign sheet which coach opened the page ---- */
+  try {
+    var code = (location.search.match(/[?&]c=([A-Za-z0-9_-]{1,64})/) || [])[1];
+    if (code && P.tracker) {
+      var b = document.createElement("script");
+      b.async = true;
+      b.src = P.tracker + "?t=" + code;   /* one parameter only */
+      document.head.appendChild(b);
+    }
+  } catch (e) { /* tracking must never break the page */ }
+
   /* ---- published coverage: real quotes, each with its source ---- */
   var pb = $("press-box");
   if (pb) {
