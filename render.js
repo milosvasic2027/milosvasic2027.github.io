@@ -339,14 +339,47 @@
   }
 
 
-  /* ---- visit beacon: tells the campaign sheet which coach opened the page ---- */
+  /* ---- visit beacons -------------------------------------------------
+     Two signals, each ONE query parameter:
+       ?t=<code>     the page loaded. Mail scanners at universities trigger
+                     this too, seconds after delivery, so it proves little.
+       ?t=<code>.e   a person engaged: scrolled 300px, clicked, touched,
+                     typed, started a video, or kept the page in focus 15 s.
+     The sheet labels each row, so only "engaged" reads as a real coach. */
   try {
     var code = (location.search.match(/[?&]c=([A-Za-z0-9_-]{1,64})/) || [])[1];
     if (code && P.tracker) {
-      var b = document.createElement("script");
-      b.async = true;
-      b.src = P.tracker + "?t=" + code;   /* one parameter only */
-      document.head.appendChild(b);
+      var ping = function (sig) {
+        var b = document.createElement("script");
+        b.async = true;
+        b.src = P.tracker + "?t=" + code + (sig ? "." + sig : "");
+        document.head.appendChild(b);
+      };
+      ping("");
+      var done = false, seen = 0, timer = null, startY = window.scrollY || 0;
+      var evs = ["scroll", "click", "keydown", "touchstart"];
+      var onAct = function (ev) {
+        if (ev.type === "scroll" && Math.abs((window.scrollY || 0) - startY) < 300) return;
+        engaged();
+      };
+      var engaged = function () {
+        if (done) return;
+        done = true;
+        evs.forEach(function (n) { window.removeEventListener(n, onAct, true); });
+        document.removeEventListener("play", engaged, true);
+        if (timer) clearInterval(timer);
+        ping("e");
+      };
+      evs.forEach(function (n) {
+        window.addEventListener(n, onAct, { capture: true, passive: true });
+      });
+      document.addEventListener("play", engaged, true);
+      timer = setInterval(function () {
+        var focused = document.visibilityState === "visible" &&
+                      (!document.hasFocus || document.hasFocus());
+        if (focused) seen++;
+        if (seen >= 15) engaged();
+      }, 1000);
     }
   } catch (e) { /* tracking must never break the page */ }
 
