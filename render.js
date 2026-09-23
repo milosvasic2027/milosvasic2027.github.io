@@ -341,14 +341,26 @@
 
   /* ---- visit beacons -------------------------------------------------
      Two signals, each ONE query parameter:
-       ?t=<code>     the page loaded. Mail scanners at universities trigger
-                     this too, seconds after delivery, so it proves little.
-       ?t=<code>.e   a person engaged: scrolled 300px, clicked, touched,
-                     typed, started a video, or kept the page in focus 15 s.
-     The sheet labels each row, so only "engaged" reads as a real coach. */
+       ?t=<code>     the page loaded. University mail scanners do this too.
+       ?t=<code>.e   a person acted: clicked or tapped, pressed a key, or
+                     started a video. Scroll and time-on-page are NOT used:
+                     scanners scroll for screenshots and hold pages open.
+     The sheet also ignores anything within 30 minutes of the send.
+
+     Owner devices: open the page once with ?owner=1 on each phone and
+     computer the family uses. That browser then never reports visits, so
+     clicking a coach's CC copy does not count as the coach. */
   try {
-    var code = (location.search.match(/[?&]c=([A-Za-z0-9_-]{1,64})/) || [])[1];
-    if (code && P.tracker) {
+    var qs = location.search;
+    var store = null;
+    try { store = window.localStorage; } catch (e) { store = null; }
+    if (/[?&]owner=1\b/.test(qs) && store) { try { store.setItem("mv_owner", "1"); } catch (e) {} }
+    if (/[?&]owner=0\b/.test(qs) && store) { try { store.removeItem("mv_owner"); } catch (e) {} }
+    var isOwner = false;
+    try { isOwner = !!(store && store.getItem("mv_owner") === "1"); } catch (e) {}
+
+    var code = (qs.match(/[?&]c=([A-Za-z0-9_-]{1,64})/) || [])[1];
+    if (code && P.tracker && !isOwner) {
       var ping = function (sig) {
         var b = document.createElement("script");
         b.async = true;
@@ -356,30 +368,20 @@
         document.head.appendChild(b);
       };
       ping("");
-      var done = false, seen = 0, timer = null, startY = window.scrollY || 0;
-      var evs = ["scroll", "click", "keydown", "touchstart"];
-      var onAct = function (ev) {
-        if (ev.type === "scroll" && Math.abs((window.scrollY || 0) - startY) < 300) return;
-        engaged();
-      };
-      var engaged = function () {
+      var done = false;
+      var evs = ["pointerdown", "touchstart", "keydown"];
+      var engaged = function (ev) {
         if (done) return;
+        if (ev && ev.isTrusted === false) return;   /* scripted events do not count */
         done = true;
-        evs.forEach(function (n) { window.removeEventListener(n, onAct, true); });
+        evs.forEach(function (n) { window.removeEventListener(n, engaged, true); });
         document.removeEventListener("play", engaged, true);
-        if (timer) clearInterval(timer);
         ping("e");
       };
       evs.forEach(function (n) {
-        window.addEventListener(n, onAct, { capture: true, passive: true });
+        window.addEventListener(n, engaged, { capture: true, passive: true });
       });
       document.addEventListener("play", engaged, true);
-      timer = setInterval(function () {
-        var focused = document.visibilityState === "visible" &&
-                      (!document.hasFocus || document.hasFocus());
-        if (focused) seen++;
-        if (seen >= 15) engaged();
-      }, 1000);
     }
   } catch (e) { /* tracking must never break the page */ }
 
