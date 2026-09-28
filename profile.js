@@ -161,14 +161,14 @@ const PROFILE = {
     },
     {
       key:   "offense",
-      title: "Offensive Highlights 2026",
+      title: "Offensive Highlights \u00b7 2025-26 Season",
       note:  "Hotchkiss varsity. Two minutes forty seconds.",
       video: "video/milos-vasic-offense-2026.mp4",
       poster: "img/poster-offense.jpg"
     },
     {
       key:   "defense",
-      title: "Defensive Highlights 2026",
+      title: "Defensive Highlights \u00b7 2025-26 Season",
       note:  "Hotchkiss varsity. One minute twenty seconds. Press work, " +
              "closeouts and rim protection.",
       video: "video/milos-vasic-defense-2026.mp4",
