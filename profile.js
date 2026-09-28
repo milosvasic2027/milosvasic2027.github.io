@@ -72,7 +72,7 @@ const PROFILE = {
                 "The Hotchkiss athletics site carries the full varsity schedule.",
 
   /* ---------------- 3. FILM ---------------- */
-  filmIntro: "Four reels: the latest open gym, offensive highlights, defensive highlights, " +
+  filmIntro: "Five reels: the last two open gyms, offensive highlights, defensive highlights, " +
              "and the steal and dunk from the NEPSAC final. Select a reel to play it. " +
              "Full games are available on request.",
 
@@ -167,16 +167,18 @@ const PROFILE = {
       poster: "img/poster-final-dunk.jpg"
     },
     {
+      key:   "opengym-sept11",
+      title: "Open Gym \u00b7 September 11, 2026",
+      note:  "Hotchkiss preseason, September 11, 2026. Ninety seconds, unedited, " +
+             "no cuts and no commentary.",
+      video: "video/milos-open-gym-sept-2026.mp4",
+      poster: "img/poster-open-gym.jpg"
+    },
+    {
       title: "Full Game \u2014 [FILL IN opponent]",
       note:  "[FILL IN date and result.]",
       video: "",                       // [FILL IN] unlisted YouTube link
       thumb: ""
-    },
-    {
-      title: "Hudl Profile",
-      link:  "https://www.hudl.com/profile/23889377/Milos-Vasic",
-      thumb: "img/milos-portrait.jpg",
-      badge: "Hudl"
     }
   ],
 
