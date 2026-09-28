@@ -87,11 +87,24 @@ const PROFILE = {
      Keep the source and the date with the text. Do not edit the words. */
   press: [
     {
+      text: "He has a great feel in terms of discernment in the paint, and he doesn't have " +
+            "a glaring weakness offensively, especially considering his size and length.",
+      source: "Prep Hoops \u00b7 Robbie Hodin, Lead Scout",
+      date:   "",
+      url:    "https://prephoops.com/player/milos-vasic/"
+    },
+    {
       text: "Hotchkiss 6'8 wing Milos Vasic takes the sixth spot as his versatility " +
             "on both ends of the floor is impressive.",
       source: "New England Recruiting Report \u2014 Connecticut 2027 Ranking Drop (No. 6 in Connecticut)",
       date:   "January 8, 2025",
       url:    "https://www.newenglandrecruitingreport.com/"
+    },
+    {
+      text: "His blend of shooting, size, and defensive versatility makes him a valuable two-way asset.",
+      source: "Prep Hoops \u00b7 Aasim Sullivan, Lead Scout",
+      date:   "",
+      url:    "https://prephoops.com/player/milos-vasic/"
     },
     {
       text: "A new name to know in New England is Milos Vasic. His two-way play is impressive " +
