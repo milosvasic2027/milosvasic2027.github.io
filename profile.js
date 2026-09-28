@@ -62,16 +62,6 @@ const PROFILE = {
   scheduleIntro: "Where to watch Milos play. Open gyms are listed alongside " +
                  "games, because a coach can see more in an open gym than in a blowout.",
   schedule: [
-    { date: "September 21, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
-      location: "The Hotchkiss School, Lakeville, CT", time: "4:45 PM", note: "" },
-    { date: "September 23, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
-      location: "The Hotchkiss School, Lakeville, CT", time: "1:00 PM", note: "" },
-    { date: "September 24, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
-      location: "The Hotchkiss School, Lakeville, CT", time: "4:45 PM", note: "" },
-    { date: "September 26, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
-      location: "The Hotchkiss School, Lakeville, CT", time: "1:00 PM", note: "" },
-    { date: "September 27, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
-      location: "The Hotchkiss School, Lakeville, CT", time: "11:00 AM", note: "" },
     { date: "September 28, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
       location: "The Hotchkiss School, Lakeville, CT", time: "4:45 PM", note: "" },
     { date: "September 30, 2026", type: "Open Gym", event: "Hotchkiss preseason open gym",
@@ -82,7 +72,7 @@ const PROFILE = {
                 "The Hotchkiss athletics site carries the full varsity schedule.",
 
   /* ---------------- 3. FILM ---------------- */
-  filmIntro: "Four reels: offensive highlights, defensive highlights, a September open gym, " +
+  filmIntro: "Four reels: the latest open gym, offensive highlights, defensive highlights, " +
              "and the steal and dunk from the NEPSAC final. Select a reel to play it. " +
              "Full games are available on request.",
 
@@ -132,13 +122,6 @@ const PROFILE = {
      ------------------------------------------------------------------ */
   films: [
     {
-      key:   "offense",
-      title: "Offensive Highlights 2026",
-      note:  "Hotchkiss varsity. Two minutes forty seconds.",
-      video: "video/milos-vasic-offense-2026.mp4",
-      poster: "img/poster-offense.jpg"
-    },
-    {
       key:   "opengym",
       title: "Open Gym \u00b7 September 25, 2026",
       note:  "Hotchkiss preseason, September 25, 2026. Sixty-six seconds, unedited, " +
@@ -148,12 +131,11 @@ const PROFILE = {
       badge: "NEW"
     },
     {
-      key:   "final",
-      title: "NEPSAC Final \u00b7 Steal and Dunk",
-      note:  "Hotchkiss against Phillips Academy Andover, March 8, 2026. " +
-             "Milos takes the ball away and finishes at the other end.",
-      video: "video/milos-nepsac-final-dunk.mp4",
-      poster: "img/poster-final-dunk.jpg"
+      key:   "offense",
+      title: "Offensive Highlights 2026",
+      note:  "Hotchkiss varsity. Two minutes forty seconds.",
+      video: "video/milos-vasic-offense-2026.mp4",
+      poster: "img/poster-offense.jpg"
     },
     {
       key:   "defense",
@@ -162,6 +144,14 @@ const PROFILE = {
              "closeouts and rim protection.",
       video: "video/milos-vasic-defense-2026.mp4",
       poster: "img/poster-defense.jpg"
+    },
+    {
+      key:   "final",
+      title: "NEPSAC Final \u00b7 Steal and Dunk",
+      note:  "Hotchkiss against Phillips Academy Andover, March 8, 2026. " +
+             "Milos takes the ball away and finishes at the other end.",
+      video: "video/milos-nepsac-final-dunk.mp4",
+      poster: "img/poster-final-dunk.jpg"
     },
     {
       title: "Full Game \u2014 [FILL IN opponent]",
