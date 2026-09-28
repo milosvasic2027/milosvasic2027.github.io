@@ -144,6 +144,22 @@ const PROFILE = {
       badge: "NEW"
     },
     {
+      key:   "opengym-sept11",
+      title: "Open Gym \u00b7 September 11, 2026",
+      note:  "Hotchkiss preseason, September 11, 2026. Ninety seconds, unedited, " +
+             "no cuts and no commentary.",
+      video: "video/milos-open-gym-sept-2026.mp4",
+      poster: "img/poster-open-gym.jpg"
+    },
+    {
+      key:   "final",
+      title: "NEPSAC Final \u00b7 Steal and Dunk",
+      note:  "Hotchkiss against Phillips Academy Andover, March 8, 2026. " +
+             "Milos takes the ball away and finishes at the other end.",
+      video: "video/milos-nepsac-final-dunk.mp4",
+      poster: "img/poster-final-dunk.jpg"
+    },
+    {
       key:   "offense",
       title: "Offensive Highlights 2026",
       note:  "Hotchkiss varsity. Two minutes forty seconds.",
@@ -157,22 +173,6 @@ const PROFILE = {
              "closeouts and rim protection.",
       video: "video/milos-vasic-defense-2026.mp4",
       poster: "img/poster-defense.jpg"
-    },
-    {
-      key:   "final",
-      title: "NEPSAC Final \u00b7 Steal and Dunk",
-      note:  "Hotchkiss against Phillips Academy Andover, March 8, 2026. " +
-             "Milos takes the ball away and finishes at the other end.",
-      video: "video/milos-nepsac-final-dunk.mp4",
-      poster: "img/poster-final-dunk.jpg"
-    },
-    {
-      key:   "opengym-sept11",
-      title: "Open Gym \u00b7 September 11, 2026",
-      note:  "Hotchkiss preseason, September 11, 2026. Ninety seconds, unedited, " +
-             "no cuts and no commentary.",
-      video: "video/milos-open-gym-sept-2026.mp4",
-      poster: "img/poster-open-gym.jpg"
     },
     {
       title: "Full Game \u2014 [FILL IN opponent]",
@@ -274,16 +274,6 @@ const PROFILE = {
              "I was named Defensive Player of the Game more than once.",
       tags:  ["Nike EYBL", "Peach Jam", "2025"],
       video: ""
-    },
-    {
-      date:  "September 11, 2026",
-      title: "Hotchkiss Open Gym",
-      text:  "Preseason open gym at Hotchkiss, two weeks before the season. " +
-             "The clip runs ninety seconds and is unedited, so you see the " +
-             "possessions that do not work as well as the ones that do.",
-      tags:  ["Open Gym", "Hotchkiss", "2026-27"],
-      video: "video/milos-open-gym-sept-2026.mp4",
-      poster: "img/poster-open-gym.jpg"
     },
     {
       date:  "[FILL IN month and year]",
