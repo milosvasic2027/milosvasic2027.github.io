@@ -140,11 +140,12 @@ const PROFILE = {
     },
     {
       key:   "opengym",
-      title: "Open Gym \u00b7 September 2026",
-      note:  "Hotchkiss preseason, September 11, 2026. Ninety seconds, unedited, " +
+      title: "Open Gym \u00b7 September 25, 2026",
+      note:  "Hotchkiss preseason, September 25, 2026. Sixty-six seconds, unedited, " +
              "no cuts and no commentary.",
-      video: "video/milos-open-gym-sept-2026.mp4",
-      poster: "img/poster-open-gym.jpg"
+      video: "video/milos-open-gym-sept-25-2026.mp4",
+      poster: "img/poster-open-gym-sept-25.jpg",
+      badge: "NEW"
     },
     {
       key:   "final",
@@ -193,7 +194,7 @@ const PROFILE = {
     ["Conference",      "Founders League / NEPSAC Class A"],
     ["Head coach",      "Coach Busacca"],
     ["Cumulative GPA",  "3.5"],
-    ["SAT",             "Results pending"],
+    ["SAT",             "1300"],
     ["ACT",             "Not taken"],
     ["Academic honors", "[FILL IN]"]
   ],
